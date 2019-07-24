@@ -17,7 +17,7 @@ class Concentration {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 //check if cards match
-                if cards[index].identifier == cards[index].identifier {
+                if cards[matchIndex].identifier == cards[index].identifier {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
@@ -40,5 +40,6 @@ class Concentration {
             cards += [card,card]
         }
         //TODO: Shuffle the cards
+        cards.shuffle()
     }
 }
